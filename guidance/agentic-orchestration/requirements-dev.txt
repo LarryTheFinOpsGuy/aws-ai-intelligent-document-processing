@@ -1,0 +1,53 @@
+# Consolidated Requirements for AgenticIDP Prototype
+# Generated from all requirements files in the project
+
+# ============================================================================
+# AWS SDK & Infrastructure
+# ============================================================================
+boto3>=1.34.0
+
+# ============================================================================
+# AWS CDK (Infrastructure as Code)
+# ============================================================================
+aws-cdk-lib==2.100.0
+constructs==10.3.0
+jsii==1.91.0
+cdk-nag
+
+# ============================================================================
+# Strands Agents Framework
+# ============================================================================
+strands-agents
+strands-agents-tools
+bedrock-agentcore
+bedrock-agentcore-starter-toolkit
+
+# ============================================================================
+# UI (Streamlit)
+# ============================================================================
+streamlit>=1.28.0
+requests>=2.31.0
+
+# ============================================================================
+# Document Processing
+# ============================================================================
+amazon-textract-textractor
+pdf2image
+Pillow
+
+# ============================================================================
+# Testing
+# ============================================================================
+pytest==6.2.5
+
+# ============================================================================
+# Component-Specific Requirements
+# ============================================================================
+# ui/requirements.txt: streamlit, requests, boto3
+# agents/orchestratorgraph/requirements.txt: strands-agents, bedrock-agentcore
+# infrastructure/cdk/requirements.txt: aws-cdk-lib, constructs, jsii
+# infrastructure/cdk/requirements-dev.txt: pytest
+# infrastructure/cdk/core/create_job/requirements.txt: boto3
+# gateway/tools/s3_vector_tool/requirements.txt: boto3, pdf2image, Pillow
+# gateway/tools/textractor_tool/requirements.txt: boto3, amazon-textract-textractor, Pillow
+# gateway/tools/s3_bucket_tool/requirements.txt: boto3

@@ -1,0 +1,14 @@
+{
+  "RequestType": "Create",
+  "ResponseURL": "https://cloudformation-custom-resource-response-uswest2.s3-us-west-2.amazonaws.com/test",
+  "StackId": "arn:aws:cloudformation:us-west-2:123456789012:stack/test-stack/test-id",
+  "RequestId": "test-request-id",
+  "ResourceType": "Custom::DataLoader",
+  "LogicalResourceId": "DataLoader",
+  "ResourceProperties": {
+    "ClusterId": "test-cluster-id",
+    "Region": "us-west-2",
+    "BucketName": "test-bucket",
+    "ClusterStatus": "ACTIVE"
+  }
+}

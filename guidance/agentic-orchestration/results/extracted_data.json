@@ -1,0 +1,104 @@
+{
+  "document_type": "purchase_order",
+  "retailer": "Bike World",
+  "po_number": "PO-2025-1030-6607",
+  "order_date": "2025-10-30",
+  "customer": {
+    "name": "Acme Bikes Manufacturing",
+    "email": null,
+    "address": "1234 Industrial Blvd, Portland, OR 97201"
+  },
+  "vendor": {
+    "name": "Bike World",
+    "address": "456 Oak Ave, Seattle, WA 98101",
+    "phone": null
+  },
+  "line_items": [
+    {
+      "sku": "AB-MB-003",
+      "product_name": "Peak Climber",
+      "description": "Peak Climber - Colors: bk1798, Sizes: L, Weight: 24.5 lbs",
+      "quantity": 2,
+      "unit_price": 1259.99,
+      "line_total": 2519.98,
+      "colors": "bk1798",
+      "sizes": "L",
+      "weight": "24.5 lbs"
+    },
+    {
+      "sku": "AB-AC-005",
+      "product_name": "Repair Kit",
+      "description": "Repair Kit - Colors: bk1798, Tools: tire levers, patches, mini pump",
+      "quantity": 8,
+      "unit_price": 20.99,
+      "line_total": 167.92,
+      "colors": "bk1798",
+      "tools": "tire levers, patches, mini pump"
+    },
+    {
+      "sku": "AB-EB-003",
+      "product_name": "E-Cruiser",
+      "description": "E-Cruiser - Colors: cr4321, Sizes: L, Battery: 36V 12Ah",
+      "quantity": 7,
+      "unit_price": 1119.99,
+      "line_total": 7839.93,
+      "colors": "cr4321",
+      "sizes": "L",
+      "battery": "36V 12Ah"
+    },
+    {
+      "sku": "AB-RB-005",
+      "product_name": "Endurance Master",
+      "description": "Endurance Master - Colors: bk1798, Sizes: XL, Weight: 17.8 lbs",
+      "quantity": 8,
+      "unit_price": 1119.99,
+      "line_total": 8959.92,
+      "colors": "bk1798",
+      "sizes": "XL",
+      "weight": "17.8 lbs"
+    },
+    {
+      "sku": "AB-CP-007",
+      "product_name": "Suspension Fork",
+      "description": "Suspension Fork - Colors: bk1798, Travel: 100mm, Adjustable: yes",
+      "quantity": 7,
+      "unit_price": 174.99,
+      "line_total": 1224.93,
+      "colors": "bk1798",
+      "travel": "100mm",
+      "adjustable": "yes"
+    },
+    {
+      "sku": "AB-HB-004",
+      "product_name": "City Glider",
+      "description": "City Glider - Colors: bl4567, Sizes: L",
+      "quantity": 7,
+      "unit_price": 489.99,
+      "line_total": 3429.93,
+      "colors": "bl4567",
+      "sizes": "L"
+    },
+    {
+      "sku": "AB-RB-002",
+      "product_name": "City Cruiser",
+      "description": "City Cruiser - Colors: gr5432, Sizes: S",
+      "quantity": 5,
+      "unit_price": 559.99,
+      "line_total": 2799.95,
+      "colors": "gr5432",
+      "sizes": "S"
+    },
+    {
+      "sku": "AB-MB-004",
+      "product_name": "Adventure Seeker",
+      "description": "Adventure Seeker - Colors: gy6789, Sizes: XL",
+      "quantity": 6,
+      "unit_price": 629.99,
+      "line_total": 3779.94,
+      "colors": "gy6789",
+      "sizes": "XL"
+    }
+  ],
+  "order_total": 30722.50,
+  "template_type": "traditional"
+}

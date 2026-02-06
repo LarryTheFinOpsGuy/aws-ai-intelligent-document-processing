@@ -1,0 +1,24 @@
+[
+  {
+    "name": "apply_guardrail",
+    "description": "Apply AWS Bedrock guardrail to validate extracted text against content policies using contextual grounding",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "extracted_text": {
+          "type": "string",
+          "description": "The extracted data to validate against guardrail policies"
+        },
+        "markdown_content": {
+          "type": "string",
+          "description": "Source markdown content to use as grounding source for validation"
+        },
+        "instructions_content": {
+          "type": "string", 
+          "description": "Instructions content to use as query context for validation"
+        }
+      },
+      "required": ["extracted_text"]
+    }
+  }
+]

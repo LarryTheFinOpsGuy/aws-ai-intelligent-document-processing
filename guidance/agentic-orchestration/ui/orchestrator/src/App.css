@@ -1,0 +1,133 @@
+/* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   SPDX-License-Identifier: Apache-2.0 */
+
+.orchestrator-app {
+  height: 100vh;
+  width: 100%;
+}
+
+/* Authentication styles */
+.amplify-authenticator {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main layout styles */
+.authenticated-app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top navigation styles */
+#top-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Tab content styles */
+.tab-content {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Chat specific styles */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  min-height: 400px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 0;
+  margin-bottom: 16px;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  background-color: #fafbfc;
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  padding: 16px;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.chat-input-container input {
+  flex: 1;
+}
+
+/* Message styling improvements */
+.chat-messages .awsui-box {
+  margin-bottom: 12px;
+}
+
+.chat-messages .awsui-box:last-child {
+  margin-bottom: 0;
+}
+
+/* Placeholder content styles */
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  text-align: center;
+}
+
+/* Loading and error states */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.error-container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tab-content {
+    padding: 16px;
+  }
+  
+  .chat-container {
+    height: 300px;
+  }
+  
+  .chat-input-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .chat-input-container input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-content {
+    padding: 12px;
+  }
+}

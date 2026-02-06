@@ -1,0 +1,31 @@
+# Exclude everything by default
+**
+
+# Include common utilities
+!common/
+!common/**
+
+# Include this agent's code
+!agents/orchestratorgraph/
+!agents/orchestratorgraph/**
+
+# Exclude development and runtime artifacts from orchestratorgraph
+agents/orchestratorgraph/logs/
+agents/orchestratorgraph/logs/**
+agents/orchestratorgraph/scripts/
+agents/orchestratorgraph/scripts/**
+agents/orchestratorgraph/.agentcore.json
+agents/orchestratorgraph/*.sh
+agents/orchestratorgraph/.DS_Store
+
+# Exclude cache and build artifacts
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/tests
+.git
+.venv
+cdk.out
+node_modules
+**/*.log
+**/.DS_Store

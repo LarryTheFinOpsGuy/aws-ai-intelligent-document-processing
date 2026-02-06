@@ -1,0 +1,104 @@
+[
+  {
+    "name": "upload_file",
+    "description": "Upload file to S3 bucket",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "content_type": {
+          "type": "string",
+          "description": "MIME type of the file"
+        },
+        "file_content": {
+          "type": "string",
+          "description": "file content as string if MIME type is text, markdown, or json, otherwise Base64 encoded"
+        },
+        "file_key": {
+          "type": "string",
+          "description": "S3 key for the file"
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Additional metadata"
+        }
+      },
+      "required": [
+        "file_key",
+        "file_content"
+      ]
+    }
+  },
+  {
+    "name": "download_file",
+    "description": "Download file from S3 bucket",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "file_key": {
+          "type": "string",
+          "description": "S3 key of the file"
+        },
+        "return_base64": {
+          "type": "boolean",
+          "description": "Return content as base64 (default: true)"
+        }
+      },
+      "required": [
+        "file_key"
+      ]
+    }
+  },
+  {
+    "name": "list_files",
+    "description": "List files in S3 bucket",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "continuation_token": {
+          "type": "string",
+          "description": "Token for pagination"
+        },
+        "max_keys": {
+          "type": "integer",
+          "description": "Maximum number of files to return"
+        },
+        "prefix": {
+          "type": "string",
+          "description": "Prefix to filter files"
+        }
+      }
+    }
+  },
+  {
+    "name": "delete_file",
+    "description": "Delete file from S3 bucket",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "file_key": {
+          "type": "string",
+          "description": "S3 key of the file to delete"
+        }
+      },
+      "required": [
+        "file_key"
+      ]
+    }
+  },
+  {
+    "name": "get_file_info",
+    "description": "Get file metadata without downloading content",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "file_key": {
+          "type": "string",
+          "description": "S3 key of the file"
+        }
+      },
+      "required": [
+        "file_key"
+      ]
+    }
+  }
+]

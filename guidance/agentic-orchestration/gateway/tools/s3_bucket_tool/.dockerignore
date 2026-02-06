@@ -1,0 +1,22 @@
+# Exclude everything by default
+**
+
+# Include common utilities
+!common/
+!common/**
+
+# Include this tool's code
+!gateway/tools/s3_bucket_tool/
+!gateway/tools/s3_bucket_tool/**
+
+# Exclude cache and build artifacts
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/tests
+.git
+.venv
+cdk.out
+node_modules
+**/*.log
+**/.DS_Store

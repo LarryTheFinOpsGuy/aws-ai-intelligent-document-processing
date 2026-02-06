@@ -1,0 +1,4 @@
+# Ignore package-dependencies-check warnings in package.json
+# These are mitigated by package-lock.json which is committed to the repo
+ui/orchestrator/package.json
+tests/

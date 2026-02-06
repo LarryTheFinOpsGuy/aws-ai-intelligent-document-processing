@@ -1,0 +1,22 @@
+[
+  {
+    "name": "extract_text",
+    "description": "Extract text from PDF documents using Amazon Textract",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "document_uri": {
+          "type": "string",
+          "description": "S3 URI of the document to process"
+        },
+        "output_format": {
+          "type": "string",
+          "description": "Output format: 'text' or 'markdown' (default: markdown)"
+        }
+      },
+      "required": [
+        "document_uri"
+      ]
+    }
+  }
+]

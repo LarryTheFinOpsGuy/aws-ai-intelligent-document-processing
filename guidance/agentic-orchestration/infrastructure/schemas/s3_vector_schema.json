@@ -1,0 +1,180 @@
+  [
+    {
+      "name": "add_document",
+      "description": "Add new document with vector embedding",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "document_type": {
+            "type": "string",
+            "description": "Type of document"
+          },
+          "sender_name": {
+            "type": "string",
+            "description": "Name of document sender"
+          },
+          "sender_address": {
+            "type": "string",
+            "description": "Address of document sender"
+          },
+          "processing_workflow": {
+            "type": "string",
+            "description": "Processing workflow"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Additional notes"
+          },
+          "example_document_uri": {
+            "type": "string",
+            "description": "S3 URI of example document - this will be a PDF or image document"
+          },
+          "instructions_s3_uri": {
+            "type": "string",
+            "description": "S3 URI of the instructions schema"
+          }
+        },
+        "required": [
+          "document_type",
+          "sender_name",
+          "sender_address",
+          "processing_workflow",
+          "example_document_uri"
+        ]
+      }
+    },
+    {
+      "name": "update_document",
+      "description": "Update existing document metadata fields",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "document_id": {
+            "type": "string",
+            "description": "Unique document identifier"
+          },
+          "processing_workflow": {
+            "type": "string",
+            "description": "Processing workflow"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Additional notes"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status: ACTIVE, PENDING REVIEW, or ARCHIVED"
+          },
+          "instructions_s3_uri": {
+            "type": "string",
+            "description": "S3 URI of the instructions schema"
+          }
+        },
+        "required": [
+          "document_id"
+        ]
+      }
+    },
+    {
+      "name": "search_documents",
+      "description": "Search for similar documents using vector similarity",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query_document_uri": {
+            "type": "string",
+            "description": "S3 URI of query document"
+          },
+          "similarity_threshold": {
+            "type": "number",
+            "description": "Minimum similarity score (default: 0.7)"
+          },
+          "max_results": {
+            "type": "integer",
+            "description": "Maximum number of results (default: 10)"
+          },
+          "document_type": {
+            "type": "string",
+            "description": "Filter by document type"
+          },
+          "sender_name": {
+            "type": "string",
+            "description": "Filter by sender name"
+          },
+          "sender_address": {
+            "type": "string",
+            "description": "Filter by sender address"
+          },
+          "instructions_s3_uri": {
+            "type": "string",
+            "description": "Filter by instructions S3 URI"
+          },
+          "status": {
+            "type": "string",
+            "description": "Optional status of PENDING REVIEW, ACTIVE, or ARCHIVED"
+          }
+
+        },
+        "required": [
+          "query_document_uri",
+          "document_type",
+          "sender_name",
+          "sender_address"
+        ]
+      }
+    },
+    {
+      "name": "list_documents",
+      "description": "List all documents in the vector index with metadata",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "max_results": {
+            "type": "integer",
+            "description": "Maximum number of results to return (default: 100)"
+          },
+          "next_token": {
+            "type": "string",
+            "description": "Pagination token for next page"
+          },
+          "return_metadata": {
+            "type": "boolean",
+            "description": "Whether to return metadata (default: true)"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get_document",
+      "description": "Retrieve a specific document by ID",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "document_id": {
+            "type": "string",
+            "description": "Document ID"
+          }
+        },
+        "required": [
+          "document_id"
+        ]
+      }
+    },
+    {
+      "name": "delete_document",
+      "description": "Delete a document from the vector index",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "document_id": {
+            "type": "string",
+            "description": "Document ID"
+          }
+        },
+        "required": [
+          "document_id"
+        ]
+      }
+    }
+  ]

@@ -1,0 +1,98 @@
+{
+  "document_type": "purchase_order",
+  "retailer": "Bike World",
+  "po_number": "PO-2024-0005",
+  "order_date": "2024-10-31 11:18:29.916722",
+  "customer": {
+    "name": "Helen Davis",
+    "email": "helen.davis@customer.tstdata",
+    "address": "9467 Valley Rd, Seattle, WA 98194"
+  },
+  "vendor": {
+    "name": "Bike World",
+    "address": "456 Oak Ave, Seattle, WA 98101",
+    "phone": "555-3495"
+  },
+  "line_items": [
+    {
+      "sku": "AB-EB-002",
+      "product_name": "E-Mountain",
+      "description": "E-Mountain bike with gr5432 color, size M, 48V 17.5Ah battery, 50 miles range",
+      "quantity": 3,
+      "unit_price": 1749.99,
+      "line_total": 5249.97,
+      "specifications": {
+        "colors": "gr5432",
+        "sizes": "M",
+        "battery": "48V 17.5Ah",
+        "range": "50 miles"
+      }
+    },
+    {
+      "sku": "AB-KB-004",
+      "product_name": "Balance Bike",
+      "description": "Balance Bike with rd7298 color, 12\" size, adjustable seat",
+      "quantity": 1,
+      "unit_price": 104.99,
+      "line_total": 104.99,
+      "specifications": {
+        "colors": "rd7298",
+        "sizes": "12\"",
+        "adjustable_seat": "yes"
+      }
+    },
+    {
+      "sku": "AB-HB-003",
+      "product_name": "Fitness Pro",
+      "description": "Fitness Pro bike with bk1798 color, size S",
+      "quantity": 2,
+      "unit_price": 594.99,
+      "line_total": 1189.98,
+      "specifications": {
+        "colors": "bk1798",
+        "sizes": "S"
+      }
+    },
+    {
+      "sku": "AB-CP-008",
+      "product_name": "Electronic Shifting",
+      "description": "Electronic Shifting component with bk1798 color, 11 speeds, wireless capability",
+      "quantity": 4,
+      "unit_price": 559.99,
+      "line_total": 2239.96,
+      "specifications": {
+        "colors": "bk1798",
+        "speeds": "11",
+        "wireless": "yes"
+      }
+    },
+    {
+      "sku": "AB-CP-007",
+      "product_name": "Suspension Fork",
+      "description": "Suspension Fork with bk1798 color, 100mm travel, adjustable",
+      "quantity": 4,
+      "unit_price": 174.99,
+      "line_total": 699.96,
+      "specifications": {
+        "colors": "bk1798",
+        "travel": "100mm",
+        "adjustable": "yes"
+      }
+    },
+    {
+      "sku": "AB-SB-005",
+      "product_name": "Gravel Bike",
+      "description": "Gravel Bike with ol4567 color, size M, 40mm tire clearance",
+      "quantity": 3,
+      "unit_price": 1119.99,
+      "line_total": 3359.97,
+      "specifications": {
+        "colors": "ol4567",
+        "sizes": "M",
+        "tire_clearance": "40mm"
+      }
+    }
+  ],
+  "order_total": 12844.83,
+  "template_type": "traditional"
+}

@@ -1,0 +1,126 @@
+# CDK asset bundling exclusions
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Test files
+tests/
+test_*.py
+*_test.py
+
+# Documentation (exclude from bundling)
+documentation/
+*.md
+README*
+
+# Sample files (large files)
+sample-files/
+
+# Git
+.git/
+.gitignore
+
+# CDK
+cdk.out/
+.cdk.staging/
+
+# Node modules (if any)
+node_modules/
+
+# UI Development files (exclude from CDK bundling)
+# Orchestrator UI
+ui/orchestrator/node_modules/
+ui/orchestrator/build/
+ui/orchestrator/dist/
+ui/orchestrator/.git/
+ui/orchestrator/.vite/
+ui/orchestrator/.cache/
+ui/orchestrator/.parcel-cache/
+ui/orchestrator/coverage/
+ui/orchestrator/.nyc_output/
+ui/orchestrator/.eslintcache
+ui/orchestrator/*.tsbuildinfo
+ui/orchestrator/.rpt2_cache/
+ui/orchestrator/.rts2_cache_*/
+ui/orchestrator/tmp/
+ui/orchestrator/temp/
+
+# Other UI directories (exclude large development files)
+ui/web-app/node_modules/
+ui/web-app/build/
+ui/web-app/dist/
+ui/web-app/.next/
+ui/web-app/.cache/
+ui/web-app/coverage/
+ui/vite/node_modules/
+ui/vite/build/
+ui/vite/dist/
+
+# UI environment and config files (keep source but exclude generated)
+ui/*/node_modules/
+ui/*/.env.local
+ui/*/.env.development.local
+ui/*/.env.test.local
+ui/*/.env.production.local
+ui/*/npm-debug.log*
+ui/*/yarn-debug.log*
+ui/*/yarn-error.log*
+ui/*/.eslintcache
+ui/*/coverage/
+
+# Jupyter notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Large data files
+*.csv
+*.json
+*.pdf
+*.png
+*.jpg
+*.jpeg

@@ -1,0 +1,16 @@
+account_number,company_name,contact_name,email,phone,street_address,city,state,zip_code,business_type,order_minimum,credit_limit,template_type,logo_path
+RT-001,Cycle City,Mike Johnson,mike@cyclecity.tstdata,555-0101,123 Main St,Portland,OR,97201,Chain Store,500.0,10000.0,traditional,output/RT-001_Cycle_City_Logo.png
+RT-003,Mountain Gear Co,Tom Wilson,tom@mountaingear.tstdata,555-0103,789 Pine St,Denver,CO,80201,Independent Shop,750.0,15000.0,traditional,output/RT-003_Mountain_Gear_Co_Logo.png
+RT-004,Urban Cycles,Lisa Rodriguez,lisa@urbancycles.tstdata,555-0104,321 Elm St,Austin,TX,73301,Online Retailer,300.0,8000.0,modern_grid,output/RT-004_Urban_Cycles_Logo.png
+RT-005,Speed Shop,David Kim,david@speedshop.tstdata,555-0105,654 Maple Dr,Phoenix,AZ,85001,Chain Store,600.0,12000.0,modern_grid,output/RT-005_Speed_Shop_Logo.png
+RT-009,Pedal Power,Chris Martinez,chris@pedalpower.tstdata,555-0109,369 Willow Rd,Nashville,TN,37201,Independent Shop,400.0,9000.0,open_form,output/RT-009_Pedal_Power_Logo.png
+RT-007,City Bikes Plus,Robert Taylor,rob@citybikeplus.tstdata,555-0107,147 Birch St,San Francisco,CA,94101,Chain Store,800.0,18000.0,open_form,output/RT-007_City_Bikes_Plus_Logo.png
+RT-011,Wheels & More,Kevin Lee,kevin@wheelsmore.tstdata,555-0111,852 Poplar St,Boise,ID,83701,Independent Shop,250.0,6000.0,minimal_list,output/RT-011_Wheels_More_Logo.png
+RT-012,Cycle Central,Rachel Green,rachel@cyclecentral.tstdata,555-0112,963 Hickory Ave,Albuquerque,NM,87101,Online Retailer,350.0,7500.0,minimal_list,output/RT-012_Cycle_Central_Logo.png
+RT-010,Bike Haven,Michelle Davis,michelle@bikehaven.tstdata,555-0110,741 Aspen Way,Salt Lake City,UT,84101,Chain Store,450.0,10000.0,minimal_list,output/RT-010_Bike_Haven_Logo.png
+RT-013,Bike Depot,Mark Thompson,mark@bikedepot.tstdata,555-0113,159 Walnut Dr,Las Vegas,NV,89101,Independent Shop,300.0,8500.0,open_form,output/RT-013_Bike_Depot_Logo.png
+RT-014,Two Wheel Store,Nicole Anderson,nicole@twowheelstore.tstdata,555-0114,357 Cherry Ln,Tucson,AZ,85701,Online Retailer,400.0,9500.0,open_form,output/RT-014_Two_Wheel_Store_Logo.png
+RT-002,Bike World,Sarah Chen,sarah@bikeworld.tstdata,555-0102,456 Oak Ave,Seattle,WA,98101,Chain Store,700.0,16000.0,modern_grid,output/RT-002_Bike_World_Logo.png
+RT-006,Trail Riders,Jennifer Brown,jen@trailriders.tstdata,555-0106,987 Cedar Ln,Boulder,CO,80301,Independent Shop,500.0,11000.0,traditional,output/RT-006_Trail_Riders_Logo.png
+RT-008,Adventure Cycling,Amanda White,amanda@adventurecycling.tstdata,555-0108,258 Spruce Ave,Minneapolis,MN,55401,Online Retailer,600.0,13000.0,open_form,output/RT-008_Adventure_Cycling_Logo.png
+RT-015,Bike Emporium,Jason Miller,jason@bikeemporium.tstdata,555-0115,468 Peach St,Spokane,WA,99201,Chain Store,550.0,12500.0,minimal_list,output/RT-015_Bike_Emporium_Logo.png

@@ -1,0 +1,22 @@
+# Exclude everything by default
+**
+
+# Include common utilities
+!common/
+!common/**
+
+# Include this lambda's code
+!infrastructure/core/create_job/
+!infrastructure/core/create_job/**
+
+# Exclude cache and build artifacts
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/tests
+.git
+.venv
+cdk.out
+node_modules
+**/*.log
+**/.DS_Store

@@ -1,0 +1,63 @@
+# Exclude everything by default
+**
+
+# Include common utilities
+!common/
+!common/**
+
+# Include UI (only necessary files for Streamlit app)
+!ui/app.py
+!ui/local_app.py
+!ui/requirements.txt
+!ui/Dockerfile
+!ui/.dockerignore
+
+# Exclude UI development directories (React apps not needed for Streamlit container)
+ui/orchestrator/
+ui/web-app/
+ui/vite/
+
+# Include gateways
+!gateway/
+!gateway/**
+
+# Include agents
+!agents/
+!agents/**
+
+# Include infra
+!infrastructure/
+!infrastructure/**
+
+# Exclude large sample data files (not needed in containers)
+infrastructure/sample_data/
+infrastructure/sample_data/**
+
+# Exclude CDK and infrastructure artifacts
+infrastructure/cdk-nag-report.txt
+infrastructure/upload-*.sh
+infrastructure/delete-*.sh
+infrastructure/generate-*.sh
+infrastructure/scripts/
+
+# Exclude cache and build artifacts
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/tests
+**/test_*
+**/*.log
+.git
+.venv
+cdk.out
+node_modules
+**/.DS_Store
+
+# Exclude test directories
+tests/
+sprints/
+documentation/
+
+# Exclude agent logs
+agents/**/logs/
+agents/**/*.log

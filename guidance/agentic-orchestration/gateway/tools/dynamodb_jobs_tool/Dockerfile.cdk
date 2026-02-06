@@ -1,0 +1,12 @@
+# checkov:skip=CKV_DOCKER_2:HEALTHCHECK not applicable for Lambda/AgentCore managed containers
+# checkov:skip=CKV_DOCKER_3:Non-root user enforced by Lambda runtime
+FROM public.ecr.aws/lambda/python:3.13
+
+# Copy shared utilities from parent context
+COPY common/ ${LAMBDA_TASK_ROOT}/common/
+
+# Copy tool code
+COPY gateway/tools/dynamodb_jobs_tool/ ${LAMBDA_TASK_ROOT}/
+
+# Set the CMD to your handler
+CMD [ "lambda_function.lambda_handler" ]

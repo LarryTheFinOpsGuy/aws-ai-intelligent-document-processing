@@ -1,0 +1,107 @@
+{
+  "name": "modern-orchestrator-ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@aws-amplify/ui-react": "6.13.2",
+    "@aws-crypto/sha256-browser": "^2.0.2",
+    "@aws-crypto/sha256-js": "^2.0.2",
+    "@aws-sdk/client-cognito-identity": "^3.777.0",
+    "@aws-sdk/client-s3": "^3.779.0",
+    "@aws-sdk/client-ssm": "^3.777.0",
+    "@aws-sdk/s3-request-presigner": "^3.779.0",
+    "@cloudscape-design/components": "^3.0.1112",
+    "@cloudscape-design/global-styles": "1.0.44",
+    "aws-amplify": "6.16.0",
+    "axios": "1.13.2",
+    "i18next": "^25.8.0",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-i18next": "^16.5.3",
+    "react-icons": "5.5.0",
+    "react-router-dom": "6.28.0",
+    "uuid": "11.1.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "npm run lint && vite build",
+    "build:dev": "npm run lint && vite build --mode development",
+    "build:staging": "npm run lint && vite build --mode staging",
+    "build:prod": "npm run lint && vite build --mode production",
+    "preview": "vite preview",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:deployment": "node scripts/test-deployment.js",
+    "test:deployment:full": "node scripts/test-deployment.js --test-build",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
+    "deploy:dev": "node scripts/deploy-to-existing-ui-stack.js development",
+    "deploy:staging": "node scripts/deploy-to-existing-ui-stack.js staging",
+    "deploy:prod": "node scripts/deploy-to-existing-ui-stack.js production",
+    "deploy:cdk:dev": "node scripts/deploy-cdk.js development",
+    "deploy:cdk:staging": "node scripts/deploy-cdk.js staging",
+    "deploy:cdk:prod": "node scripts/deploy-cdk.js production",
+    "build:only": "node scripts/build.js",
+    "get-url": "node scripts/get-url.js",
+    "get-url:dev": "node scripts/get-url.js development",
+    "get-url:staging": "node scripts/get-url.js staging",
+    "get-url:prod": "node scripts/get-url.js production",
+    "open-app": "node scripts/open-app.js",
+    "open-app:dev": "node scripts/open-app.js development",
+    "open-app:staging": "node scripts/open-app.js staging",
+    "open-app:prod": "node scripts/open-app.js production"
+  },
+  "eslintConfig": {
+    "extends": [
+      "prettier"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-react-jsx": "^7.22.15",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.50.0",
+    "@typescript-eslint/parser": "^8.50.0",
+    "@vitejs/plugin-react": "5.0.4",
+    "eslint": "8.57.1",
+    "eslint-config-prettier": "8.10.0",
+    "eslint-import-resolver-typescript": "4.4.4",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.37.4",
+    "eslint-plugin-react-hooks": "4.6.2",
+    "fast-check": "3.22.0",
+    "jsdom": "27.3.0",
+    "prettier": "2.8.8",
+    "typescript": "5.6.3",
+    "vite": "7.1.12",
+    "vite-plugin-svgr": "4.5.0",
+    "vitest": "2.1.8"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!@cloudscape-design)"
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://acmebikes.com/schemas/purchase-order.json",
+  "title": "Acme Bikes Purchase Order",
+  "description": "JSON schema for purchase orders",
+  "type": "object",
+  "required": [
+    "po_number",
+    "retailer_name",
+    "order_date",
+    "line_items"
+  ],
+  "properties": {
+    "po_number": {
+      "type": "string",
+      "description": "Purchase order number"
+    },
+    "retailer_account": {
+      "type": "string",
+      "description": "Retailer account number if present"
+    },
+    "retailer_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "Name of the retailer placing the order"
+    },
+    "order_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time when the order was placed"
+    },
+    "line_items": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "description": "Array of products being ordered",
+      "items": {
+        "$ref": "#/$defs/LineItem"
+      }
+    },
+    "order_total": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total amount of the order in USD"
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "End customer name (optional)"
+    },
+    "customer_email": {
+      "type": "string",
+      "format": "email",
+      "description": "End customer email (optional)"
+    },
+    "customer_phone": {
+      "type": "string",
+      "pattern": "^\\d{3}-\\d{4}$",
+      "description": "End customer phone number (optional)",
+      "default": "555-0000"
+    },
+    "customer_address": {
+      "type": "string",
+      "description": "End customer address (optional)",
+      "default": "Address not provided"
+    },
+    "special_requests": {
+      "type": "string",
+      "description": "Special requests or instructions",
+      "default": "Standard order"
+    }
+  },
+  "$defs": {
+    "LineItem": {
+      "type": "object",
+      "required": ["sku", "product_name", "description", "quantity", "unit_price", "line_total"],
+      "properties": {
+        "sku": {
+          "type": "string",
+          "pattern": "^AB-[A-Z]{2}-\\d{3}$",
+          "description": "Product SKU in format AB-XX-NNN",
+          "examples": ["AB-RB-001", "AB-MB-045", "AB-AC-123"]
+        },
+        "product_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Name of the product"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "description": "Product description"
+        },
+        "quantity": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8,
+          "description": "Quantity of items ordered"
+        },
+        "unit_price": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Price per unit in USD"
+        },
+        "line_total": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total price for this line item (quantity × unit_price)"
+        },
+        "options": {
+          "type": "object",
+          "description": "Selected product options (single values)",
+          "properties": {
+            "colors": {
+              "type": "string",
+              "description": "Selected color",
+              "examples": ["Matte Black", "Racing Red", "Ocean Blue"]
+            },
+            "sizes": {
+              "type": "string",
+              "description": "Selected size",
+              "examples": ["M", "L", "XL", "16\"", "700c"]
+            },
+            "weight": {
+              "type": "string",
+              "pattern": "^\\d+\\.\\d+ lbs$",
+              "description": "Product weight",
+              "examples": ["15.6 lbs", "24.5 lbs"]
+            },
+            "battery": {
+              "type": "string",
+              "description": "Battery specification for electric bikes",
+              "examples": ["36V 10Ah", "48V 17.5Ah"]
+            },
+            "range": {
+              "type": "string",
+              "pattern": "^\\d+ miles$",
+              "description": "Range for electric bikes",
+              "examples": ["40 miles", "60 miles"]
+            },
+            "speeds": {
+              "type": "string",
+              "pattern": "^\\d+$",
+              "description": "Number of speeds for gear systems",
+              "examples": ["7", "21", "27"]
+            },
+            "wheel_size": {
+              "type": "string",
+              "description": "Wheel size specification",
+              "examples": ["26\"", "27.5\"", "29\"", "700c"]
+            },
+            "brake_type": {
+              "type": "string",
+              "enum": ["rim", "disc", "hydraulic"],
+              "description": "Type of brake system"
+            },
+            "certification": {
+              "type": "string",
+              "enum": ["CPSC", "CE", "SNELL"],
+              "description": "Safety certification for helmets"
+            }
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

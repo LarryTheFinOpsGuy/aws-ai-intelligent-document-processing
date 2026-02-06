@@ -1,0 +1,18 @@
+[
+  {
+    "name": "validate_purchase_order",
+    "description": "Validates purchase order JSON file from the document bucket against Aurora DSQL database. First validates JSON structure against purchase order schema, then checks SKU validity, pricing against wholesale prices, product options (colors, sizes), and company/retailer information. Returns detailed validation results with status (VALID/WARNING/INVALID) for schema, line items, and overall order.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "key_path": {
+          "type": "string",
+          "description": "S3 key path of the purchase order JSON file in the document bucket (e.g., 'purchase-orders/po-12345.json')"
+        }
+      },
+      "required": [
+        "key_path"
+      ]
+    }
+  }
+]

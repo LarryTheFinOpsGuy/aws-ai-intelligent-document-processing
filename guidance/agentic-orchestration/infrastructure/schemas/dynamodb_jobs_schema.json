@@ -1,0 +1,125 @@
+[
+  {
+    "name": "update_job",
+    "description": "Update ProcessingJobs table fields. All fields are optional - only provided fields will be updated.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "job_id": {
+          "type": "string",
+          "description": "Job ID (GUID)"
+        },
+        "doc_type": {
+          "type": "string",
+          "description": "Document type classification"
+        },
+        "sender_name": {
+          "type": "string",
+          "description": "Document sender/originator name"
+        },
+        "markdown_s3_uri": {
+          "type": "string",
+          "description": "S3 URI for extracted markdown content"
+        },
+        "match_doc_id": {
+          "type": "string",
+          "description": "ID of matched document from similarity search"
+        },
+        "instructions_s3_uri": {
+          "type": "string",
+          "description": "S3 URI for processing instructions"
+        },
+        "extracted_data_s3_uri": {
+          "type": "string",
+          "description": "S3 URI for structured extracted data"
+        },
+        "status": {
+          "type": "string",
+          "description": "Job status: CREATED, PROCESSING, COMPLETED, FAILED"
+        }
+      },
+      "required": ["job_id"]
+    }
+  },
+  {
+    "name": "get_job",
+    "description": "Get a specific job by job_id from ProcessingJobs table",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "job_id": {
+          "type": "string",
+          "description": "Job ID (GUID)"
+        }
+      },
+      "required": ["job_id"]
+    }
+  },
+  {
+    "name": "get_job_status",
+    "description": "Get job status derived from latest ProcessingActions record",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "job_id": {
+          "type": "string",
+          "description": "Job ID (GUID)"
+        }
+      },
+      "required": ["job_id"]
+    }
+  },
+  {
+    "name": "get_job_actions",
+    "description": "Get all actions for a job from ProcessingActions table, sorted chronologically. Optionally filter by specific agent.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "job_id": {
+          "type": "string",
+          "description": "Job ID (GUID)"
+        },
+        "agent": {
+          "type": "string",
+          "description": "Optional: Filter actions by specific agent name (e.g., 'analyzer', 'extractor', 'validator')"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "Maximum number of actions to return (default: 100)"
+        }
+      },
+      "required": ["job_id"]
+    }
+  },
+  {
+    "name": "get_latest_action",
+    "description": "Get the most recent action for a job from ProcessingActions table",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "job_id": {
+          "type": "string",
+          "description": "Job ID (GUID)"
+        }
+      },
+      "required": ["job_id"]
+    }
+  },
+  {
+    "name": "get_recent_jobs",
+    "description": "Get recent jobs by status, ordered by creation time (newest first). Returns up to 50 jobs.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Job status to filter by: CREATED, PROCESSING, COMPLETED, FAILED (default: CREATED)"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "Maximum number of jobs to return (default: 50, max: 50)"
+        }
+      }
+    }
+  }
+]

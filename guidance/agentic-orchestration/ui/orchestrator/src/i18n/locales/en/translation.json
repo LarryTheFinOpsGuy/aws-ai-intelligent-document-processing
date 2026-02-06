@@ -1,0 +1,166 @@
+{
+  "ui": {
+    "job-flow-viewer": {
+      "title": "Job Processing Flow",
+      "loading": "Loading job flow...",
+      "error-loading": "Error loading job flow",
+      "processing-flow-1": "Job Processing Flow",
+      "processing-flow-2": "Job Processing Flow",
+      "no-data-available": "No job data available",
+      "chat-about-job": "Chat about this job",
+      "processing": "Processing Flow",
+      "overview-title": "Job Overview",
+      "job-id": "Job ID",
+      "refresh": "Refresh",
+      "status": "Status",
+      "duration": "Duration",
+      "created": "Created",
+      "document-type": "Document Type",
+      "clear-view": "Clear View",
+      "view-edit-instructions": "View/Edit Instructions"
+    },
+    "processing-rules": {
+      "title": "Processing Rules",
+      "description": "Manage document processing configurations for different senders",
+      "search-placeholder": "Search by sender name...",
+      "total": "Total:",
+      "search": "Search",
+      "clear": "Clear",
+      "loading": "Loading processing rules...",
+      "sender": "Sender",
+      "document-type": "Document Type",
+      "address": "Address",
+      "status": "Status",
+      "instructions": "Instructions",
+      "actions": "Actions",
+      "no-rules-found": "No processing rules found",
+      "view-edit-instructions": "View/Edit Instructions"
+    },
+    "instructions-editor": {
+      "loading-instructions": "Loading instructions...",
+      "instructions-title": "Instructions",
+      "saved": "Saved",
+      "enter-instructions": "Enter instructions in markdown format",
+      "file": "File",
+      "markdown-format-help": "Use markdown format for formatting. Changes are saved automatically."
+    },
+    "instructions-editor-page": {
+      "invalid-url": "Invalid instructions editor URL"
+    },
+    "errors": {
+      "application_error": "Application Error",
+      "missing_parameters": "Missing required parameters: key and sender"
+    },
+    "actions": {
+      "no_actions_available": "No actions available",
+      "view_original_document": "View Original Document",
+      "view_extracted_text": "View Extracted Text",
+      "view_extracted_data": "View Extracted Data",
+      "view_processing_rules": "View Processing Rules",
+      "details": "Action Details",
+      "select_to_view_details": "Select an action from the flow diagram to view details"
+    },
+    "general": {
+      "app_title": "Orchestrator UI"
+    },
+    "action-details": {
+      "status": "Status",
+      "duration": "Duration",
+      "started": "Started",
+      "completed": "Completed",
+      "result": "Result"
+    },
+    "flow-diagram": {
+      "completed": "Completed",
+      "running": "Running",
+      "failed": "Failed"
+    },
+    "job-chat-panel": {
+      "starting-analysis": "Starting analysis of job",
+      "send": "Send"
+    },
+    "main-layout": {
+      "welcome": "Welcome"
+    }
+  },
+  "common": {
+    "errors": {
+      "application_error": "Application Error",
+      "no_internet_connection": "No internet connection - Some features may be unavailable"
+    },
+    "error-message": {
+      "retry": "Retry",
+      "refresh-or-contact": "Please refresh the page or contact support if the problem persists."
+    }
+  },
+  "chat": {
+    "interface": {
+      "description": "Chat with the AI agent for assistance and guidance",
+      "title": "Agent Chat"
+    },
+    "actions": {
+      "clear_history": "Clear History"
+    },
+    "session": {
+      "session_id": "Session ID:",
+      "messages": "• Messages:"
+    },
+    "chat-tab": {
+      "welcome": "Welcome to Agent Chat",
+      "start-conversation": "Start a conversation with the AI agent. Ask questions about document processing, job status, or get help with the system.",
+      "api-not-available": "API client not available. Please refresh the page.",
+      "send": "Send"
+    }
+  },
+  "logs": {
+    "session": {
+      "session_id": "Session ID:",
+      "user": "User:",
+      "last_activity": "Last Activity:",
+      "current_job": "Current Job:"
+    },
+    "history": {
+      "description": "Chat conversation history and management",
+      "clear_history": "Clear Chat History",
+      "new_session": "New Session",
+      "title": "Chat History Management",
+      "messages_count": "Messages in Current Session:"
+    },
+    "logs-tab": {
+      "system-information": "System Information",
+      "first-message": "First message:",
+      "latest-message": "Latest message:",
+      "configuration-details": "Configuration Details"
+    }
+  },
+  "orchestrate": {
+    "upload": {
+      "description": "Upload and process PDF documents",
+      "title": "Process Documents",
+      "button": "Upload and Process",
+      "document_title": "Upload Document",
+      "history_title": "Upload History"
+    },
+    "orchestrate-tab": {
+      "no-uploads-yet": "No uploads yet",
+      "no-upload-history": "No upload history available. Upload a document to get started."
+    }
+  },
+  "status": {
+    "status-tab": {
+      "select-status": "Select Status",
+      "description": "Monitor document processing jobs and view detailed status",
+      "title": "Job Status",
+      "search-placeholder": "Search by Job ID",
+      "no-jobs-found": "No jobs found",
+      "recent-jobs": "Recent Jobs",
+      "completed": "Completed",
+      "processing": "Processing",
+      "failed": "Failed",
+      "created": "Created",
+      "refresh": "Refresh",
+      "search": "Search",
+      "clear": "Clear"
+    }
+  }
+}

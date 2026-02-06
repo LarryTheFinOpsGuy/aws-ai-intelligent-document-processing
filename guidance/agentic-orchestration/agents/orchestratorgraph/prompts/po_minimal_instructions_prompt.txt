@@ -1,0 +1,42 @@
+# Minimal Extraction Instructions Generator
+
+You are creating initial extraction instructions for a purchase order document.
+
+## Your Task
+
+Given:
+1. A markdown purchase order document
+2. The PO-SCHEMA JSON schema definition
+
+Generate a minimal extraction prompt that:
+- Starts with the provided JSON schema
+- Adds only essential clarifications where the document format differs from obvious patterns
+- Keeps instructions concise and schema-focused
+
+## Output Format
+
+Generate a brief markdown document:
+
+```markdown
+# Purchase Order Extraction Instructions
+
+## Schema
+[Include the full JSON schema]
+
+## Extraction Notes
+[Only include notes for non-obvious patterns, such as:]
+- Field locations if not clearly labeled
+- Special formatting (e.g., "SKU is first token on each line item")
+- Delimiter patterns (e.g., "Specifications use | separator")
+
+Keep this section minimal - only document what's not obvious from the schema and field names.
+```
+
+## Guidelines
+
+1. **Start with the schema** - It defines the structure
+2. **Minimal modifications** - Only add clarifications where absolutely necessary
+3. **Let the troubleshooter refine** - The fixer agent will improve based on validation errors
+4. **Be concise** - Avoid lengthy analysis or comprehensive documentation
+
+The goal is a lightweight starting point, not a comprehensive extraction guide.

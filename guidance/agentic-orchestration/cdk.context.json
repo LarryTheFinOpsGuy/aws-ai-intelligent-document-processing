@@ -1,0 +1,14 @@
+{
+  "agenticidp": {
+    "development": {
+      "environment": "dev",
+      "app_name": "agenticidp",
+      "admin_email": ""
+    },
+    "production": {
+      "environment": "prod",
+      "app_name": "agenticidp",
+      "admin_email": ""
+    }
+  }
+}

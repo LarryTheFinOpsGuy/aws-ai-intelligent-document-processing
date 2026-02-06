@@ -1,0 +1,30 @@
+# Core AWS and CDK
+aws-cdk-lib>=2.233.0
+constructs==10.3.0
+cdk-nag
+jsii>=1.91.0
+boto3
+
+# Bedrock AgentCore
+bedrock-agentcore
+bedrock-agentcore-starter-toolkit
+
+# Strands Agents Framework
+strands-agents
+strands-agents-tools
+mcp
+
+# Document Processing
+amazon-textract-textractor
+pdf2image
+
+# Data and Validation
+pydantic
+pyyaml
+
+# HTTP Requests
+requests
+
+# UI and Monitoring
+streamlit
+aws-opentelemetry-distro>=0.10.0
