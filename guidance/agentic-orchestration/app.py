@@ -11,6 +11,10 @@ from cdk_nag import AwsSolutionsChecks, HIPAASecurityChecks, NagSuppressions, Na
 
 app = cdk.App()
 
+cdk.Stack(app, "MyStack",
+    description="My solution description (uksb-wxpa92o82g)."
+)
+
 # Get configuration from context
 config = app.node.try_get_context("agenticidp")
 env_name = app.node.try_get_context("agenticidp:environment") or "development"
