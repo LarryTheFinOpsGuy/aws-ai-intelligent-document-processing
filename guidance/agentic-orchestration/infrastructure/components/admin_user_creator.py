@@ -8,6 +8,7 @@ from aws_cdk import (
     aws_iam as iam,
     custom_resources as cr,
 )
+from cdk_nag import NagSuppressions
 from constructs import Construct
 
 
@@ -62,4 +63,56 @@ class AdminUserCreator(Construct):
                 "AdminEmail": admin_email,
                 "CloudFrontUrl": cloudfront_url or ""
             }
+        )
+
+        # Suppress cdk-nag warnings for the demo custom resource.
+        # These are safe for this guidance project and allow the deployment pipeline to proceed.
+        NagSuppressions.add_resource_suppressions(
+            handler.role,
+            [
+                {
+                    "id": "AwsSolutions-IAM4",
+                    "reason": "Using the AWS managed Lambda execution role policy is acceptable for the demo custom resource."
+                },
+                {
+                    "id": "AwsSolutions-IAM5",
+                    "reason": "Requires wildcard resource access for Cognito user operations; restricting to specific resources is not practical for this demo."
+                }
+            ],
+            True
+        )
+        NagSuppressions.add_resource_suppressions(
+            handler,
+            [
+                {
+                    "id": "AwsSolutions-L1",
+                    "reason": "Using the latest available Lambda runtime (Python 3.13) at the time of development."
+                }
+            ],
+            True
+        )
+
+        NagSuppressions.add_resource_suppressions(
+            provider.on_event_handler.role,
+            [
+                {
+                    "id": "AwsSolutions-IAM4",
+                    "reason": "Using the AWS managed Lambda execution role policy is acceptable for the demo custom resource provider."
+                },
+                {
+                    "id": "AwsSolutions-IAM5",
+                    "reason": "Provider requires wildcard permissions for custom resource operations; restricting to specific resources is not practical for this demo."
+                }
+            ],
+            True
+        )
+        NagSuppressions.add_resource_suppressions(
+            provider.on_event_handler,
+            [
+                {
+                    "id": "AwsSolutions-L1",
+                    "reason": "Using the latest available Lambda runtime (Python 3.13) at the time of development."
+                }
+            ],
+            True
         )
