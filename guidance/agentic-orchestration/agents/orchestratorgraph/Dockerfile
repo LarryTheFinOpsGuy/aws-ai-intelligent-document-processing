@@ -1,6 +1,7 @@
 # checkov:skip=CKV_DOCKER_2:HEALTHCHECK not applicable for Lambda/AgentCore managed containers
 # checkov:skip=CKV_DOCKER_3:Non-root user enforced by Lambda runtime
-FROM --platform=linux/arm64 ghcr.io/astral-sh/uv:python3.11-bookworm-slim
+# NOTE: Building on x86 CI hosts; remove explicit ARM platform to avoid exec format errors.
+FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
 WORKDIR /app
 
 # All environment variables in one layer
