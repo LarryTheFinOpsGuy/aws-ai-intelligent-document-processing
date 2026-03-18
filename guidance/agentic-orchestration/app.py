@@ -11,8 +11,8 @@ from cdk_nag import AwsSolutionsChecks, HIPAASecurityChecks, NagSuppressions, Na
 
 app = cdk.App()
 
-cdk.Stack(app, "MyStack",
-    description="My solution description (uksb-wxpa92o82g)."
+cdk.Stack(app, "AgenticIDPStack",
+    description="Stack for Agentic Intelligent Document Processing (IDP) solution"
 )
 
 # Get configuration from context
