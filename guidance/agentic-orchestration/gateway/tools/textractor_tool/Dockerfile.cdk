@@ -4,7 +4,9 @@
 FROM public.ecr.aws/lambda/python:3.11
 
 # Install system dependencies for textract-textractor
-RUN yum update -y && \
+# tesseract is in EPEL, not the default AL2 repos, so enable EPEL first
+RUN amazon-linux-extras install epel -y && \
+    yum update -y && \
     yum install -y \
     poppler-utils \
     tesseract \

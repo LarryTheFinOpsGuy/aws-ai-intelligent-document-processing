@@ -1,6 +1,7 @@
 # checkov:skip=CKV_DOCKER_2:HEALTHCHECK not applicable for Lambda/AgentCore managed containers
 # checkov:skip=CKV_DOCKER_3:Non-root user enforced by Lambda runtime
-# NOTE: Building on x86 CI hosts; remove explicit ARM platform to avoid exec format errors.
+# NOTE: Bedrock AgentCore Runtime requires ARM64 images. CDK builds this as linux/arm64
+# via ecr_assets.Platform.LINUX_ARM64 (QEMU emulation on AMD64 CodeBuild hosts).
 FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
 WORKDIR /app
 

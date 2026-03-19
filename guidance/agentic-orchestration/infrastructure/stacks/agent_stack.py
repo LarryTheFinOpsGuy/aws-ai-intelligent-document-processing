@@ -70,7 +70,8 @@ class AgentStack(Stack):
             self, "OrchestratorImage",
             **get_docker_asset_props(
                 directory=".",
-                dockerfile="agents/orchestratorgraph/Dockerfile"
+                dockerfile="agents/orchestratorgraph/Dockerfile",
+                platform=ecr_assets.Platform.LINUX_ARM64
             )
         )
 
