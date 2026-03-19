@@ -4,13 +4,13 @@
 FROM public.ecr.aws/lambda/python:3.11
 
 # Install system dependencies for textract-textractor
-# tesseract is in EPEL, not the default AL2 repos, so enable EPEL first
-RUN amazon-linux-extras install epel -y && \
-    yum update -y && \
-    yum install -y \
+# Lambda Python 3.11 uses Amazon Linux 2023 (AL2023), which uses dnf (not yum).
+# tesseract is in EPEL; enable it via epel-release before installing.
+RUN dnf install -y epel-release && \
+    dnf install -y \
     poppler-utils \
     tesseract \
-    && yum clean all
+    && dnf clean all
 
 # Copy shared utilities from parent context
 COPY gateway/utilities/ ${LAMBDA_TASK_ROOT}/
