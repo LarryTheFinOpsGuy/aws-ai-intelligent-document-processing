@@ -11,7 +11,7 @@ phases:
       - pip install -r guidance/agentic-orchestration/infrastructure/requirements-dev.txt || true
       - npm install -g aws-cdk@2
       - npm install --prefix guidance/agentic-orchestration/ui/orchestrator
-      - docker run --privileged --rm public.ecr.aws/tonistiigi/binfmt --install all
+      - apt-get install -y qemu-user-static
   pre_build:
     commands:
       # Optional: pick environment
