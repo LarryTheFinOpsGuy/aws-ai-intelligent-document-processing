@@ -11,13 +11,13 @@ phases:
       - pip install -r guidance/agentic-orchestration/infrastructure/requirements-dev.txt || true
       - npm install -g aws-cdk@2
       - npm install --prefix guidance/agentic-orchestration/ui/orchestrator
-      - docker run --privileged --rm tonistiigi/binfmt --install all
+      - docker run --privileged --rm public.ecr.aws/tonistiigi/binfmt --install all
   pre_build:
     commands:
       # Optional: pick environment
       - export ENV=dev
       - cd guidance/agentic-orchestration
-      - cdk bootstrap
+      - cdk bootstrap --force
   build:
     commands:
       - python deploy.py --env $ENV --admin-email "larry.cusick@perficient.com"
