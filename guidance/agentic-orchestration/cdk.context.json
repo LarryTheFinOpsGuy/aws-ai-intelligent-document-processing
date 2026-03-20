@@ -3,12 +3,14 @@
     "development": {
       "environment": "dev",
       "app_name": "agenticidp",
-      "admin_email": ""
+      "admin_email": "",
+      "codebuild_role_name": "codebuild-aws-ai-intelligent-document-processing-service-role"
     },
     "production": {
       "environment": "prod",
       "app_name": "agenticidp",
-      "admin_email": ""
+      "admin_email": "",
+      "codebuild_role_name": "codebuild-aws-ai-intelligent-document-processing-service-role"
     }
   }
 }

@@ -23,13 +23,14 @@ class ModernOrchestratorUIStack(Stack):
     """Stack for Modern Orchestrator UI hosting infrastructure."""
 
     def __init__(
-        self, 
-        scope: Construct, 
-        construct_id: str, 
+        self,
+        scope: Construct,
+        construct_id: str,
         config: dict,
         cognito_user_pool_id: str = None,
         cognito_app_client_id: str = None,
         admin_email: str = None,
+        codebuild_role_name: str = None,
         **kwargs
     ) -> None:
         super().__init__(scope, construct_id, stack_name=f"AgenticIDP-{construct_id}", **kwargs)
@@ -96,6 +97,28 @@ class ModernOrchestratorUIStack(Stack):
              
         # Create outputs
         self._create_outputs()
+
+        # Grant CodeBuild service role permission to invalidate this CloudFront distribution
+        if codebuild_role_name:
+            codebuild_role = iam.Role.from_role_name(
+                self, "CodeBuildServiceRole", codebuild_role_name
+            )
+            distribution_arn = Stack.of(self).format_arn(
+                service="cloudfront",
+                region="",
+                resource="distribution",
+                resource_name=self.distribution.distribution_id
+            )
+            iam.Policy(
+                self, "CodeBuildCloudFrontInvalidationPolicy",
+                statements=[
+                    iam.PolicyStatement(
+                        actions=["cloudfront:CreateInvalidation"],
+                        resources=[distribution_arn]
+                    )
+                ],
+                roles=[codebuild_role]
+            )
 
     def _create_web_bucket(self) -> s3.Bucket:
         """Create S3 bucket for hosting the React application."""

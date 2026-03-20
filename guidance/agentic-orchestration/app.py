@@ -75,7 +75,8 @@ modern_ui_stack = ModernOrchestratorUIStack(
     config=env_config,
     cognito_user_pool_id=core_stack.cognito.user_pool.user_pool_id if admin_email else None,
     cognito_app_client_id=core_stack.cognito.web_app_client.user_pool_client_id if admin_email else None,
-    admin_email=admin_email
+    admin_email=admin_email,
+    codebuild_role_name=env_config.get("codebuild_role_name")
 )
 
 # Set dependencies
