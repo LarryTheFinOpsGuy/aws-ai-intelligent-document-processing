@@ -1,5 +1,10 @@
 version: 0.2
 
+env:
+  secrets-manager:
+    DOCKERHUB_USERNAME: dockerhub/credentials:username
+    DOCKERHUB_PASSWORD: dockerhub/credentials:password
+
 phases:
   install:
     runtime-versions:
@@ -11,6 +16,7 @@ phases:
       - pip install -r guidance/agentic-orchestration/infrastructure/requirements-dev.txt || true
       - npm install -g aws-cdk@2
       - npm install --prefix guidance/agentic-orchestration/ui/orchestrator
+      - echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
       - docker run --privileged --rm tonistiigi/binfmt --install all
   pre_build:
     commands:
